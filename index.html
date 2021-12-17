@@ -60,5 +60,25 @@
         ClearTable();
         document.getElementById('size').value = "";
         }
+        function Evaluate(){
+        var size = document.getElementById('size').value;
+        function matrixArray(rows){
+            var arr = []
+            for(var i=0; i<(rows); i++){
+                arr[i] = new Array();
+                for(var j=0; j<(rows); j++){
+                    if (document.getElementById(String(i) + String(j)).value.match(/\d/g) != null)
+                        arr[i][j] = document.getElementById(String(i) + String(j)).value;
+                    else 
+                        arr[i][j] = 'z';
+                }
+            }
+            return arr; 
+        }
+        if ((isNaN(Determinant(matrixArray(size))) == true)) 
+            alert('Заполните все ячейки числами!!!')
+        else 
+            alert(Determinant(matrixArray(size)));
+    } 
     </script>
 </html>
