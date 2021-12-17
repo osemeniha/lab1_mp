@@ -7,7 +7,17 @@
     <body>
         <div class="parent">
             <div class="block">
-                
+                <label>Введите размер матрицы:</label>
+                <input type="text" class="text" id="size" size="25" maxlength="20" placeholder="Размер матрицы" >
+                <br>
+                <input type="button" class = "but" onclick="AddTable()" value="Ввести">
+                <input type="button"  class = "but" onclick="Clear(); document.getElementById('table').style.display='none' " value="Очистить"> 
+                <div class="table" id = "table">
+                    <p id = "text"></p>
+                    <table id="node" >
+                        
+                    </table>
+                    <input type="button" onclick="Evaluate()" value="Посчитать определитель">
             </div>
         </div>
     </body>
