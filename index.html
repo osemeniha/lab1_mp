@@ -22,6 +22,29 @@
         </div>
     </body>
     <script>
+        function AddTable(){  
+        ClearTable();
+        document.getElementById('table').style.display='none';
+        var size = document.getElementById('size').value;
+        if ( size.match(/\d/g) != null){ 
+            document.getElementById('text').innerHTML = 'Введите значения матрицы:';
+            document.getElementById('table').style.display='block';
+            var T = document.getElementById ('node');
+            for (var i=0; i<size; i++){  
+                var ro = T.insertRow (-1);
+                ro.id = i;
+                for (var j = 0; j < size; j++) {
+                    var ce = T.rows [i].insertCell (-1);
+                    var inp = document.createElement ('input');
+                    inp.style.width = '4em';
+                    inp.id = ro.id + j;
+                    ce.appendChild (inp);   
+                } 
+            }
+            } 
+        else 
+            alert('Необходимо ввести число!');        
+    } 
         function ClearTable(){
             var size = document.getElementById('size').value;
             var T = document.getElementById ('node');
