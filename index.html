@@ -21,4 +21,17 @@
             </div>
         </div>
     </body>
+    <script>
+        function ClearTable(){
+            var size = document.getElementById('size').value;
+            var T = document.getElementById ('node');
+            for (var i = T.rows.length; i>0; i-- ){
+                T.deleteRow (T.rows.length -1);   
+                for (var j = 0, J = T.rows.length; j < J; j++) {
+                    var ceL = T.rows [j].cells.length; 
+                    if (ceL > 1)
+                        T.rows [j].deleteCell (ceL - 1)}
+                }
+        }
+    </script>
 </html>
